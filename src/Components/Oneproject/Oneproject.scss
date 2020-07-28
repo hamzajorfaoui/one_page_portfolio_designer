@@ -1,0 +1,110 @@
+.OneProject{
+    position: relative;
+    width: 400px;
+    height: 0px;
+    border-right: 1px solid #4a4a4aad;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &.mobile{
+        width: 100%;
+    }
+    .Title{
+        z-index: 10;
+        padding: 0px 60px;
+        margin:0;
+        opacity: 0;
+        transform: translateX(-60px);
+        transition: transform 1s , opacity 1s;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: calc(100% - 120px);
+        max-height: 120px;
+        &.active{
+            opacity: 1;
+            transform: translateX(0px);
+        }
+        >h1{
+            font-size: 26px;
+            padding: 0;
+            margin-top: 14px;
+        }
+        >span{
+            font-size: 14px;
+            opacity: .2;
+            transition: opacity 1s;
+        }
+
+    }
+   .more{
+       z-index: 1;
+       position: absolute;
+       bottom: 0;
+       left: 0;
+       right: 0;
+       height: 0%;
+       transition: height .5s;
+    .images{
+        position: relative;
+        width: 100%;
+        height: 66vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        .pic{
+            position: absolute; 
+            top: 0;
+            // z-index: 100;
+            // opacity: 0;
+        } 
+    }
+    .cadre{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    } 
+   }
+   .more_text{
+        height: 0px;
+        transform: translateY(50vh);
+        transition:transform 1.5s ,opacity 1s;
+        opacity: 0;
+    >span{
+        margin-bottom: 30px;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+   }
+   &.hover{
+    .more{
+        height: 100%;
+        // .pic{
+        //     transform: translateY(0%) rotate(0deg);
+        //     opacity: 1;
+        // }
+    }
+    .Title{
+    >span{
+        opacity: 1;
+    }   
+    &.animate{
+        transform: translateY(-150%);
+    }
+   }
+    .more_text{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+   }
+   .url{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+   }
+}

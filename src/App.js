@@ -1,25 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Loading from './Components/Loading/Loading';
+import Header from './Components/Header/Header';
+import Project from './Components/Project/Project';
 
 function App() {
+  const [loading , setloading] = React.useState(false);
+  const [isMobile , setisMobile]=React.useState(false);
+  React.useEffect(()=>{
+  // var mediaquerie = window.matchMedia('(max-width:600px)');
+  // function screnTest(e){
+  //     if(e.matches){
+  //       setisMobile(true);
+  //     }else{
+  //       setisMobile(false);
+  //     }
+  // }
+  // screnTest(mediaquerie);
+  // mediaquerie.addListener(screnTest);
+
+  if(/Mobi/.test(navigator.userAgent)){
+    setisMobile(true);
+    document.getElementById("app").style.position="fixed";
+    document.documentElement.className="fixed";
+  }else{
+    setisMobile(false);
+  }
+  
+  },
+  []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" id="app">
+    {
+     loading ? <><Header></Header><Project isMobile={isMobile}></Project></> :<Loading loded={()=>{setloading(true)}}></Loading>
+    }
     </div>
+    
   );
 }
 
