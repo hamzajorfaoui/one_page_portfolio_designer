@@ -21,7 +21,7 @@
         justify-content: center;
         flex-direction: column;
         width: calc(100% - 120px);
-        max-height: 120px;
+        max-height: 110px;
         &.active{
             opacity: 1;
             transform: translateX(0px);
@@ -106,5 +106,6 @@
     left: 0;
     right: 0;
     bottom: 0; 
+    cursor: inherit;
    }
 }

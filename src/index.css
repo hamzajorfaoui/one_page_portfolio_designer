@@ -1,5 +1,9 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url('https://fonts.googleapis.com/css?family=Montserrat');
+}
 body {
-  font-family:'Gilroy ☞';
+  font-family:'Montserrat';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #000;
@@ -7,6 +11,7 @@ body {
   padding: 0;
   /* overflow-y: hidden; */
   /* overflow: hidden; */
+  cursor: none;
 }
 /* html, */
 body {

@@ -99,9 +99,9 @@ export default function Project({isMobile}){
         Project_ref.current.removeEventListener("wheel",scrollY_event);
    }
    const Project_Scroll_add=()=>{
-    Project_ref.current.addEventListener("wheel",scrollY_event);
-    Project_ref.current.addEventListener("touchstart",touch_begin);
-    Project_ref.current.addEventListener("touchend",touch_end);
+        Project_ref.current.addEventListener("wheel",scrollY_event);
+        Project_ref.current.addEventListener("touchstart",touch_begin);
+        Project_ref.current.addEventListener("touchend",touch_end);
    }
     var timeoutID = null;
     const timeoutcalc=()=>{ 
@@ -171,6 +171,7 @@ export default function Project({isMobile}){
         Project_ref.current.addEventListener("wheel",scrollX_event);
     }
     },[]);
+    
     return(
         <div className={isMobile ?"Project mobile":"Project"} ref={Project_ref}>
          {

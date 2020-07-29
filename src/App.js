@@ -3,6 +3,7 @@ import './App.scss';
 import Loading from './Components/Loading/Loading';
 import Header from './Components/Header/Header';
 import Project from './Components/Project/Project';
+import Cursor from './Components/Cursor/Cursor';
 
 function App() {
   const [loading , setloading] = React.useState(false);
@@ -30,12 +31,14 @@ function App() {
   },
   []);
   return (
+    <>
+    <Cursor></Cursor>
     <div className="App" id="app">
     {
      loading ? <><Header></Header><Project isMobile={isMobile}></Project></> :<Loading loded={()=>{setloading(true)}}></Loading>
     }
     </div>
-    
+    </>
   );
 }
 

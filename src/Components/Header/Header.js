@@ -10,8 +10,14 @@ gsap.to(".Header",{duration:1,y:0 , delay:1});
 },[])
     return(
         <header className="Header">
-          <div className="logo">Ayoub Laarif</div>
-          <div className="contactme">Contact me</div>
+          <div className="logo">
+            <span>Ayoub Laarif</span>
+            {/* <div className="line"></div> */}
+          </div>
+          <div className="contactme" >
+            <span>Contact me</span> 
+            <div className="line"></div>
+          </div>
         </header>
     )
 }

@@ -28,6 +28,7 @@ export default function Oneproject({data , isMobile}){
        if(data.textcolor){
         gsap.to(Title.current,{duration:.5,color:data.textcolor});
       }
+      Cursor_hover();
    }
    const Oneproject_leave =()=>{
     OneP.current.classList.remove("hover");
@@ -37,6 +38,19 @@ export default function Oneproject({data , isMobile}){
     if(data.textcolor){
         gsap.to(Title.current,{duration:.5,color:"#fff"});
     }
+    Cursor_leave();
+   }
+   const Cursor_hover=()=>{
+    if(document.getElementById('cursor') && document.getElementById('minicursor')){
+        document.getElementById('cursor').style.borderColor = data.textcolor;
+        document.getElementById('minicursor').style.backgroundColor = data.textcolor;
+    } 
+   }
+   const Cursor_leave=()=>{
+    if(document.getElementById('cursor') && document.getElementById('minicursor')){
+        document.getElementById('cursor').style.borderColor = '#fff';
+        document.getElementById('minicursor').style.backgroundColor = '#fff';
+    } 
    }
 
     return(
