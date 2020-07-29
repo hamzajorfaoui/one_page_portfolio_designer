@@ -25,6 +25,7 @@ function App() {
     document.getElementById("app").style.position="fixed";
     document.documentElement.className="fixed";
   }else{
+    document.documentElement.style.cursor='none';
     setisMobile(false);
   }
   
@@ -32,7 +33,7 @@ function App() {
   []);
   return (
     <>
-    <Cursor></Cursor>
+    {!isMobile ?<Cursor></Cursor>:<></>}
     <div className="App" id="app">
     {
      loading ? <><Header></Header><Project isMobile={isMobile}></Project></> :<Loading loded={()=>{setloading(true)}}></Loading>

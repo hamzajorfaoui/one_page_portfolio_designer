@@ -1,10 +1,10 @@
     #cursor{
         position: absolute;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         border: 2px solid #fff;
         box-sizing: border-box;
-        transition: 0.6s;
+        transition: all 0.4s , width 0.2s, height 0.2s;
         transform: translate(-50%, -50%);
         border-radius: 50%;
         pointer-events: none;
@@ -16,9 +16,19 @@
         height: 4px;
         background-color: #fff;
         box-sizing: border-box;
-        transition: 0.3s;
+        transition: all 0.1s;
         transform: translate(-50%, -50%);
         border-radius: 50%;
         pointer-events: none;
         z-index: 10000;
+    }
+    .cursor_hidden{
+        opacity: 0;
+    }
+    .cursor_active{
+        opacity: 1;
+    }
+    .cursor_down{
+        width: 25px !important;
+        height: 25px !important;
     }
